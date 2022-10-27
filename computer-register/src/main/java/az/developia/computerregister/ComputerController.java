@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ComputerController {
-@Autowired
-private ComputerService computerService;	
 	
+@Autowired
+private ComputerService computerService;		
 
 	
 	@GetMapping(path= "/computers")
@@ -41,7 +41,14 @@ private ComputerService computerService;
 	public String deleteComputers(@PathVariable Integer id){
 		computerService.delete(id);
 		return "home";
-	}	
+	}
+	
+	@GetMapping(path= "/computers/edit/{id}")
+	public String editComputers(@PathVariable Integer id,Model m){
+		Computer c = computerService.findById(id);
+		m.addAttribute("computer", c);
+		return "save-computer";
+	}
 	
 	
 }

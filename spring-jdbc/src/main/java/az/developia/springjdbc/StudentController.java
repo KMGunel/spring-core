@@ -43,5 +43,10 @@ private StudentService studentService;
 		return "home";
 	}	
 	
-	
+	@GetMapping(path= "/students/edit/{id}")
+	public String editStudents(@PathVariable Integer id,Model m){
+		Student s = studentService.findById(id);
+		m.addAttribute("student", s);
+		return "save-student";
+	}
 }

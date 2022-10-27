@@ -23,4 +23,8 @@ public class ComputerService {
 	public void delete(Integer id) {
 		computerRepository.delete(id);
 	}
+	
+	public Computer findById(Integer id) {
+		return computerRepository.findById(id);
+	}
 }

@@ -1,12 +1,12 @@
 package az.developia.computerregister;
 
 public class Computer {
-private int id;
+private Integer id;
 private String brand;
 private double price;
 
 
-public Computer(int id, String brand, double price) {
+public Computer(Integer id, String brand, double price) {
 	super();
 	this.id = id;
 	this.brand = brand;
@@ -15,10 +15,10 @@ public Computer(int id, String brand, double price) {
 public Computer() {
 	super();
 }
-public int getId() {
+public Integer getId() {
 	return id;
 }
-public void setId(int id) {
+public void setId(Integer id) {
 	this.id = id;
 }
 public String getBrand() {

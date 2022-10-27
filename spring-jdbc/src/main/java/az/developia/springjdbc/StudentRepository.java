@@ -43,7 +43,13 @@ public class StudentRepository {
 		try {
 			Connection conn=dataSource.getConnection();
 			Statement st=conn.createStatement();
+			if(s.getId()==null) {
 			st.executeUpdate("insert into students (name,surname) " + "values ('"+s.getName()+"','"+s.getSurname()+"');");
+			}
+			else {
+				st.executeUpdate("update students set name='"+s.getName()+"',surname='"+s.getSurname()+"' where id="+s.getId());
+			}
+			
 			conn.close();
 			
 		} catch (Exception e) {
@@ -68,4 +74,26 @@ public class StudentRepository {
 	}
 
 
-}
+
+	public Student findById(Integer id) {
+		Student s=new Student();
+		try {
+			Connection conn=dataSource.getConnection();
+			Statement st=conn.createStatement();
+			ResultSet rs=st.executeQuery("select * from students where id="+id);
+			if(rs.next()) {
+				s = new Student(rs.getInt("id"),rs.getString("name"),rs.getString("surname"));
+				
+			}			
+			conn.close();			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+		
+		return s;
+	}
+	}
+
+
+

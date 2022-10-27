@@ -26,7 +26,10 @@
 				<td th:text="${computer.id}"></td>
 				<td th:text="${computer.brand}"></td>
 				<td th:text="${computer.price}"></td>
-				<td><a class="btn btn-primary" th:href="@{/computers/delete/{id}(id=${computer.id})}">Delete</a></td>
+				<td>
+				<a class="btn btn-danger" th:href="@{/computers/delete/{id}(id=${computer.id})}">Delete</a>
+				<a class="btn btn-primary" th:href="@{/computers/edit/{id}(id=${computer.id})}">Edit</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>

@@ -23,4 +23,8 @@ public class StudentService {
 	public void delete(Integer id) {
 		studentRepository.delete(id);
 	}
+	
+	public Student findById(Integer id) {
+		return studentRepository.findById(id);
+	}
 }

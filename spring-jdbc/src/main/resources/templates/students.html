@@ -26,7 +26,10 @@
 				<td th:text="${student.id}"></td>
 				<td th:text="${student.name}"></td>
 				<td th:text="${student.surname}"></td>
-				<td><a class="btn btn-danger" th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a></td>
+				<td>
+				<a class="btn btn-danger" th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a>
+				<a class="btn btn-primary" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>

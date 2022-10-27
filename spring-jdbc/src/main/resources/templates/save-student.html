@@ -11,6 +11,7 @@
 <h1>Save Student</h1>
 
 <form th:action="@{/save-new-student}" th:object="${student}" method="POST">
+<input type="hidden" th:field="*{id}"><br>
 <label>Name</label><br>
 <input th:field="*{name}"><br>
 <label>Surname</label><br>

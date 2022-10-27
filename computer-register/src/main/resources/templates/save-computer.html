@@ -11,6 +11,7 @@
 <h1>Save Computer</h1>
 
 <form th:action="@{/save-new-computer}" th:object="${computer}" method="POST">
+<input type="hidden" th:field="*{id}"><br>
 <label>Brand</label><br>
 <input th:field="*{brand}"><br>
 <label>Price</label><br>

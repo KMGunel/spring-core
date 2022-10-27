@@ -1,10 +1,11 @@
 package az.developia.springjdbc;
 
 public class Student {
-private int id;
+private Integer id;
 private String name;
 private String surname;
-public Student(int id, String name, String surname) {
+
+public Student(Integer id, String name, String surname) {
 	super();
 	this.id = id;
 	this.name = name;
@@ -13,10 +14,10 @@ public Student(int id, String name, String surname) {
 public Student() {
 	
 }
-public int getId() {
+public Integer getId() {
 	return id;
 }
-public void setId(int id) {
+public void setId(Integer id) {
 	this.id = id;
 }
 public String getName() {

@@ -11,6 +11,9 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import az.developia.springcore.Computer;
+import az.developia.springjdbc.Student;
+
 @Repository
 public class ComputerRepository {
 	
@@ -43,7 +46,14 @@ public class ComputerRepository {
 		try {
 			Connection conn=dataSource.getConnection();
 			Statement st=conn.createStatement();
-			st.executeUpdate("insert into computers (brand,price) " + "values ('"+c.getBrand()+"','"+c.getPrice()+"');");
+			
+			if(c.getId()==null) {
+				st.executeUpdate("insert into computers (brand,price) " + "values ('"+c.getBrand()+"','"+c.getPrice()+"');");
+			}
+			else {
+				st.executeUpdate("update computers set brand='"+c.getBrand()+"',price='"+c.getPrice()+"' where id="+c.getId());
+			}
+			
 			conn.close();
 			
 		} catch (Exception e) {
@@ -65,6 +75,23 @@ public class ComputerRepository {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public Computer findById(Integer id) {
+		Computer c=new Computer();
+		try {
+			Connection conn=dataSource.getConnection();
+			Statement st=conn.createStatement();
+			ResultSet rs=st.executeQuery("select * from computers where id="+id);
+			if(rs.next()) {
+				c = new Computer(rs.getInt("id"),rs.getString("brand"),rs.getDouble("price"));
+				
+			}			
+			conn.close();			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}			
+		return c;
 	}
 
 
