@@ -20,7 +20,7 @@ public class MyMiniGoogleController {
 	students.add(new Student(6,"Raul","Aliyev"));
 	}
 	@GetMapping(path= "/mygoogle")
-	public String searchStudents(@RequestParam(name="request") String s,Model model) {
+	public String searchStudents(@RequestParam(name="request",required=false,defaultValue="") String s,Model model) {
 		
 		ArrayList<Student> list = new ArrayList<>();
 		for (Student st : students) {
