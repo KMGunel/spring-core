@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Save student</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+
+<h1>Save Student</h1>
+
+<form th:action="@{/save-new-student}" th:object="${student}" method="POST">
+<label>Name</label><br>
+<input th:field="*{name}"><br>
+<label>Surname</label><br>
+<input th:field="*{surname}"><br>
+<input type="submit" value="Save student">
+</form>
+
+</body>
+</html>          

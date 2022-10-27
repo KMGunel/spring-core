@@ -1,6 +1,6 @@
 package az.developia.springcore;
 
-import java.util.Iterator;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -40,7 +40,7 @@ public class SpringCoreApplication {
 		Home home  = c.getBean(Home.class);
 		System.out.println(home);
 		Home home1  = c.getBean(Home.class);
-		System.out.println(home);
+		System.out.println(home1);
 		
 		
 	}
