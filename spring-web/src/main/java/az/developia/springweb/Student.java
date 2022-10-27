@@ -10,6 +10,9 @@ public Student(int id, String name, String surname) {
 	this.name = name;
 	this.surname = surname;
 }
+public Student() {
+	
+}
 public int getId() {
 	return id;
 }

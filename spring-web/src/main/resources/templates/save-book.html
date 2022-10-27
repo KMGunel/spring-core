@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Save book</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+
+<h1>Save Book</h1>
+
+<form th:action="@{/save-new-book}" th:object="${book}" method="POST">
+<label>Name</label><br>
+<input th:field="*{name}"><br>
+<label>Price</label><br>
+<input th:field="*{price}"><br>
+<label>Page Count</label><br>
+<input th:field="*{pageCount}"><br>
+<input type="submit" value="Save book">
+</form>
+
+</body>
+</html>          
