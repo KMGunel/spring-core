@@ -12,10 +12,34 @@
 
 <form th:action="@{/save-new-student}" th:object="${student}" method="POST">
 <input type="hidden" th:field="*{id}"><br>
+
 <label>Name</label><br>
 <input th:field="*{name}"><br>
+<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+
 <label>Surname</label><br>
 <input th:field="*{surname}"><br>
+
+<label>Birthday</label><br>
+<input type="date" th:field="*{birthday}"><br>
+<p th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></p>
+
+<label>Email</label><br>
+<input th:field="*{email}"><br>
+<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+<label>Telephone</label><br>
+<input th:field="*{telephone}"><br>
+<p th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}"></p>
+
+<label>Code</label><br>
+<input th:field="*{code}"><br>
+<p th:if="${#fields.hasErrors('code')}" th:errors="*{code}"></p>
+
+<label>Mark</label><br>
+<input type="number" th:field="*{mark}"><br>
+<p th:if="${#fields.hasErrors('mark')}" th:errors="*{mark}"></p>
+<br>
 <input type="submit" value="Save student">
 </form>
 
