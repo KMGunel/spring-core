@@ -11,8 +11,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import az.developia.springcore.Computer;
-import az.developia.springjdbc.Student;
+
 
 @Repository
 public class ComputerRepository {

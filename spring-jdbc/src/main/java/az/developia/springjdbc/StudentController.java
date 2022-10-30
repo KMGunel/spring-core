@@ -36,6 +36,7 @@ public void initBinder(WebDataBinder dataBinder) {
 	@GetMapping(path= "/save-student")
 	public String saveStudents(Model m){
 		Student s = new Student();
+
 		m.addAttribute("student", s);
 		return "save-student";
 	}	
