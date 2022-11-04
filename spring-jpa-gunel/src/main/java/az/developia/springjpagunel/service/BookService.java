@@ -1,10 +1,12 @@
-package az.developia.springjpagunel;
+package az.developia.springjpagunel.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import az.developia.springjpagunel.model.Book;
+import az.developia.springjpagunel.repository.BookRepository;
 
 @Service
 public class BookService {
