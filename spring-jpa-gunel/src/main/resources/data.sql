@@ -1,12 +1,4 @@
 
-
-insert into book
-(name,price) values
-('Java','200'),
-('HTML','90'),
-('CSS','120'),
-('JavaScript','150');
-
 insert into instructordetail
 (phone,address,hobby) values
 ('0557550588','Yasamal','music'),

@@ -3,7 +3,10 @@ package az.developia.springjpagunel.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import az.developia.springjpagunel.exception.MyValidationException;
 import az.developia.springjpagunel.model.Instructor;
 import az.developia.springjpagunel.service.InstructorService;
 
@@ -29,7 +33,11 @@ private InstructorService instructorService;
 	}	
 	
 	@PostMapping
-	public void save(@RequestBody Instructor i) {
+	public void save(@Valid @RequestBody Instructor i,BindingResult br) {
+		if(br.hasErrors()) {
+			throw new MyValidationException(br);			
+		}	
+		
 		instructorService.save(i);
 	}
 	@PutMapping
@@ -45,6 +53,12 @@ private InstructorService instructorService;
 	public void deleteById(@PathVariable Integer id) {
 		instructorService.delete(id);
 	}	
+	
+	
+	@GetMapping(path= "/partial/begin/{begin}/end/{end}")
+	public List<Instructor> findPartial(@PathVariable Integer begin,@PathVariable Integer lenght) {		
+		return instructorService.findPartial(begin,lenght);
+	}
 	
 	
 }

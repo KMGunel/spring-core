@@ -29,4 +29,9 @@ public class InstructorService {
 	public Instructor findById(Integer id) {
 		return instructorRepository.findById(id).get();
 	}
+
+	public List<Instructor> findPartial(Integer begin, Integer lenght) {
+		List<Instructor>list=instructorRepository.findPartial(begin,lenght);
+		return list;
+	}
 }
