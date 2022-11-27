@@ -4,7 +4,6 @@ import org.springframework.validation.BindingResult;
 
 import lombok.Getter;
 import lombok.Setter;
-@SuppressWarnings("serial")
 @Getter
 @Setter
 public class MyValidationException extends RuntimeException {

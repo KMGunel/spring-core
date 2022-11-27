@@ -1,10 +1,10 @@
-package az.developia.springrestsecurity;
+package az.developia.restsecurity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringRestSecurityApplicationTests {
+class RestSecurityApplicationTests {
 
 	@Test
 	void contextLoads() {
