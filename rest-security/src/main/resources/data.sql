@@ -7,10 +7,10 @@ insert into student
 ('Zumrud','Eliyeva');
 
 insert into users 
-(username,password,enabled) values
-('murad','{noop}1',1),
-('gulay','{bcrypt}$2a$12$LPFpSQRfsygHG4hiBdqvueaBqP9yK78dJnOe3qbQMumJF08ZsPMhO',1),
-('rauf','{noop}1',0);
+(username,password,address,email,phone,enabled) values
+('murad','{noop}1','Yasamal','murad@ru','05564',1),
+('gulay','{bcrypt}$2a$12$LPFpSQRfsygHG4hiBdqvueaBqP9yK78dJnOe3qbQMumJF08ZsPMhO','Sumqayit','murad@ru','05564',1),
+('rauf','{noop}1','Baki','murad@ru','05564',0);
 
 insert into authorities
 (username,authority) values
