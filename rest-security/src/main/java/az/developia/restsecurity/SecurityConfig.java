@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -28,6 +29,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
+		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+		.antMatchers(HttpMethod.POST,"/users/**").permitAll()	
+		
 		.anyRequest().authenticated().and().httpBasic().and()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		

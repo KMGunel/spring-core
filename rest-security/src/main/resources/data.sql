@@ -6,16 +6,6 @@ insert into student
 ('Alim','Ceferov'),
 ('Zumrud','Eliyeva');
 
-create table users
-(username varchar(50),
-password varchar(150),
-enabled int);
-
-create table authorities
-(username varchar(50),
-authority varchar(50)
-);
-
 insert into users 
 (username,password,enabled) values
 ('murad','{noop}1',1),
